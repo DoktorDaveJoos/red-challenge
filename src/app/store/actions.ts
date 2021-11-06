@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IQuestionMap } from '../models';
+import { IQuestionMap, IWeatherData, IWeatherDataCollection } from '../models';
 
 export const loadQuestions = createAction(
   '[Dashboard] Load Questions',
@@ -15,3 +15,12 @@ export const loadQuestionsFailure = createAction(
   '[Dashboard] Load Questions Failed',
   props<Error>()
 );
+
+export const loadWeatherData =  createAction(
+  '[Dashboard] Load WeatherData'
+)
+
+export const setRandomWeatherData = createAction(
+  '[Dashboard] Set WeatherData',
+  props<IWeatherDataCollection>()
+)

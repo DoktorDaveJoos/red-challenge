@@ -1,9 +1,10 @@
 import { IQuestion, IQuestionCollection, IQuestionMap } from './questions';
-import { IWeatherData } from './weather';
+import { IWeatherData, IWeatherDataCollection } from './weather';
 
 export {
   IQuestion,
   IQuestionCollection,
   IQuestionMap,
-  IWeatherData
+  IWeatherData,
+  IWeatherDataCollection
 };
