@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { IState } from './store/state';
 import { Store } from '@ngrx/store';
 import { Title } from '@angular/platform-browser';
@@ -8,11 +8,12 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterContentChecked{
 
   constructor(
     private store: Store<IState>,
-    private titleService: Title
+    private titleService: Title,
+    private changeDetector: ChangeDetectorRef,
   ) {}
 
   // TODO: Consider not using title service -> slow DOM operations
@@ -22,6 +23,10 @@ export class AppComponent {
 
   ngOnInit() {
     this.store.dispatch({type: '[Dashboard] Load WeatherData'});
+  }
+
+  ngAfterContentChecked(): void {
+    this.changeDetector.detectChanges();
   }
 
 }
