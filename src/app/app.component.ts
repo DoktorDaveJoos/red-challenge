@@ -1,7 +1,8 @@
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
-import { IState } from './store/state';
 import { Store } from '@ngrx/store';
 import { Title } from '@angular/platform-browser';
+import { IAppState } from './store';
+import { loadWeatherData } from './store/weather/weather.actions';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent implements AfterContentChecked{
 
   constructor(
-    private store: Store<IState>,
+    private store: Store<IAppState>,
     private titleService: Title,
     private changeDetector: ChangeDetectorRef,
   ) {}
@@ -22,7 +23,7 @@ export class AppComponent implements AfterContentChecked{
   }
 
   ngOnInit() {
-    this.store.dispatch({type: '[Dashboard] Load WeatherData'});
+    this.store.dispatch(loadWeatherData());
   }
 
   ngAfterContentChecked(): void {
