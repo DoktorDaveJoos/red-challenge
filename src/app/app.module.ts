@@ -15,13 +15,15 @@ import { stackoverflowReducer } from './store/stackoverflow/stackoverflow.reduce
 import { weatherReducer } from './store/weather/weather.reducer';
 import { WeatherEffects } from './store/weather/weather.effects';
 import { StackoverflowEffects } from './store/stackoverflow/stackoverflow.effects';
+import { StackoverflowComponent } from './components/dashboard/card/stackoverflow/stackoverflow.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    CardComponent
+    CardComponent,
+    StackoverflowComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,18 @@
 <div class="flex gap-8">
-  <app-card title="typescript"></app-card>
-  <app-card title="angular"></app-card>
-<!--  <app-card title="mixed"></app-card>-->
+  <app-stackoverflow class="flex-1" title="typescript"></app-stackoverflow>
+  <app-stackoverflow class="flex-1" title="angular2"></app-stackoverflow>
+
+  <app-card class="flex-1" subtitle="STACKOVERFLOW & WEATHER" title="mixed">
+
+    <ng-container *ngIf="mixed | async as items">
+      <ul role="list" class="divide-y divide-gray-200">
+        <li *ngFor="let item of items" class="py-4 flex">
+          <div class="ml-3">
+            <p class="text-sm text-gray-700">{{ getInformation(item) }}</p>
+          </div>
+        </li>
+      </ul>
+    </ng-container>
+
+  </app-card>
 </div>

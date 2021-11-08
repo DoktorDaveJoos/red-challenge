@@ -1,6 +1,7 @@
 export interface IWeatherData {
-  temp: string,
-  wind: number
+  "Temp. A.": string,
+  wind: number,
+  Zeit: string
 }
 
 export interface IWeatherDataCollection {
