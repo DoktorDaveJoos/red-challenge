@@ -13,11 +13,6 @@ export class StackoverflowService {
 
   getAll(title: string, pageSize = 10) {
     return this.http.get(environment.soEndpoint
-      + `?pagesize=${pageSize}&order=desc&sort=activity&site=stackoverflow&intitle=${title}`).pipe(
-        map(res => {
-          console.log(res);
-          return res;
-        })
-    )
+      + `?pagesize=${pageSize}&order=desc&sort=activity&site=stackoverflow&intitle=${title}`);
   }
 }
