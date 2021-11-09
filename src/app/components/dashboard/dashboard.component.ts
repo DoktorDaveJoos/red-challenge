@@ -53,7 +53,7 @@ export class DashboardComponent implements OnInit {
 
   getInformation(value: IQuestion | IWeatherData): string {
     return (value as IQuestion).title ??
-      (value as IWeatherData)['Temp. A.'] + "° Grad am " +
+      (value as IWeatherData)['Temp. A.'] + "°C am " +
       (value as IWeatherData).Zeit;
   }
 
