@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StackoverflowComponent } from './stackoverflow.component';
+import { provideMockStore } from '@ngrx/store/testing';
+import { initialState } from '../../../../store';
 
 describe('StackoverflowComponent', () => {
   let component: StackoverflowComponent;
@@ -8,7 +10,12 @@ describe('StackoverflowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StackoverflowComponent ]
+      declarations: [ StackoverflowComponent ],
+      providers: [
+        provideMockStore({
+          initialState: initialState,
+        }),
+      ]
     })
     .compileComponents();
   });
